@@ -6,7 +6,6 @@ import {
 	UpdateDateColumn,
 } from 'typeorm'
 
-
 @Entity({ name: 'users' })
 export class User {
 	@PrimaryGeneratedColumn()
@@ -17,6 +16,8 @@ export class User {
 	email: string
 	@Column()
 	password: string
+	@Column({ default: false })
+	isAdmin: boolean
 	@CreateDateColumn()
 	created_at: Date
 	@UpdateDateColumn()
